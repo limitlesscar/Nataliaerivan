@@ -1,10 +1,7 @@
-// Import required Firebase components
+// firebase.js - Firestore only
+
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore'; // Use collection and getDocs for querying
-import { getAuth } from 'firebase/auth';
-import { getStorage } from 'firebase/storage';
-import { getDatabase } from 'firebase/database';
-import { getMessaging } from 'firebase/messaging';
+import { getFirestore } from 'firebase/firestore';
 
 // Your Firebase configuration object
 const firebaseConfig = {
@@ -18,12 +15,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase services
 const firestore = getFirestore(app);
-const auth = getAuth(app);
-const storage = getStorage(app);
-const database = getDatabase(app);
-const messaging = getMessaging(app);
 
-export { firestore, auth, storage, database, messaging }; // Exporting the services
+export { firestore };
